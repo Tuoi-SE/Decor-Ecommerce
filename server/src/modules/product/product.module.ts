@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { UploadModule } from '../upload/upload.module';
 import { Category, Product, ProductImage, Attribute, AttributeValue } from './domain/entities';
 
 import { ProductController } from './presentation/controllers/product.controller';
@@ -16,6 +17,7 @@ import { CategoryService } from './application/services/category.service';
             Attribute,
             AttributeValue,
         ]),
+        UploadModule,
     ],
     controllers: [ProductController, CategoryController],
     providers: [ProductService, CategoryService],
